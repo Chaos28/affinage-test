@@ -1,0 +1,891 @@
+@import "fonts";
+
+* {
+  box-sizing: border-box;
+}
+img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.visually-hidden {
+  position: absolute;
+  clip: rect(0 0 0 0);
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+}
+
+.company-name-logo__icon {
+  position: absolute;
+  top: 33.8px;
+  left: 33.4px;
+  z-index: 5;
+
+  @media (max-width: 320px) {
+    top: 15.8px;
+    left: 20px;
+  }
+}
+
+.company-name-logo__letter {
+  font-family: "Geometria", sans-serif;
+  font-weight: 500;
+  font-size: 80px;
+  color: transparent;
+  -webkit-text-stroke: 1px black;
+  text-stroke: 1px black;
+  position: absolute;
+
+  &--A {
+    top: -57px;
+    right: 25%;
+    z-index: 5;
+    @media (max-width: 768px) {
+      top: 0;
+    }
+
+    @media (max-width: 320px) {
+      top: 39.5%;
+      left: 70px;
+      font-size: 60px;
+    }
+  }
+
+  &--E {
+    right: 12.2%;
+    top: 27px;
+    z-index: -1;
+
+    @media (max-width: 900px) {
+      z-index: 5;
+    }
+
+    @media (max-width: 320px) {
+      top: 23%;
+      right: 64px;
+      font-size: 60px;
+    }
+  }
+}
+
+.main {
+  padding-top: 97px;
+
+  &::after {
+    content: "";
+    width: 50%;
+    height: 100%;
+    box-shadow: 0 0 99px rgba(0, 0, 0, 0.1);
+    background-image: linear-gradient(
+      26deg,
+      #ffffff 0%,
+      rgba(255, 255, 255, 0) 100%
+    );
+    opacity: 0.65;
+    position: absolute;
+    top: 0;
+    right: 0;
+    z-index: -1;
+  }
+
+  @media (max-width: 900px) {
+    padding-top: 60px;
+  }
+
+  @media (max-width: 768px) {
+    padding-top: 0;
+    height: 100vh;
+  }
+}
+
+.container {
+  max-width: 1920px;
+  margin: 0 auto;
+  padding: 0 80px 0 80px;
+
+  @media (max-width: 900px) {
+    padding: 0;
+  }
+
+  @media (max-width: 768px) {
+    height: 100%;
+  }
+
+  @media (max-width: 320px) {
+    overflow: hidden;
+  }
+}
+
+.wrapper {
+  position: relative;
+
+  @media (max-width: 768px) {
+    height: 100%;
+  }
+}
+
+.slider {
+  width: 100%;
+  position: relative;
+
+  @media (max-width: 900px) {
+    display: flex;
+  }
+
+  @media (max-width: 768px) {
+    height: 100%;
+  }
+
+  @media (max-width: 320px) {
+    flex-direction: column;
+  }
+}
+
+.slider__block {
+  width: 62.6%;
+  height: 525px;
+  position: relative;
+
+  @media (max-width: 900px) {
+    width: 50%;
+  }
+
+  @media (max-width: 768px) {
+    height: auto;
+  }
+
+  @media (max-width: 320px) {
+    width: 100%;
+
+    &::before {
+      display: none;
+    }
+
+    &::after {
+      opacity: 0.6;
+    }
+  }
+}
+
+.slider__block--first {
+  @media (max-width: 320px) {
+    height: 44%;
+    background-color: #f7e611;
+
+    .slider__item {
+      position: absolute;
+      top: 83px;
+      left: -84px;
+      z-index: 3;
+    }
+    .slider__item::after {
+      opacity: 0.8;
+    }
+  }
+}
+
+.slider__block--second {
+  width: 67.3%;
+  height: 490px;
+  position: absolute;
+  right: 0;
+  top: 87px;
+  z-index: 4;
+
+  @media (max-width: 900px) {
+    width: 50%;
+    position: relative;
+    top: 0;
+    height: auto;
+  }
+
+  @media (max-width: 320px) {
+    width: 100%;
+    height: 56%;
+    z-index: 4;
+  }
+}
+
+.slider__item {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  opacity: 0;
+  transition: 800ms ease-out;
+
+  &::after {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    background-color: #f7e611;
+    opacity: 0.8;
+    z-index: 2;
+  }
+
+  &::before {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    background-color: white;
+    opacity: 0.5;
+    z-index: 1;
+  }
+
+  &--active {
+    opacity: 1;
+  }
+
+  @media (max-width: 320px) {
+    &::before {
+      display: none;
+    }
+
+    &::after {
+      opacity: 0.6;
+    }
+  }
+}
+
+.menu-burger {
+  position: absolute;
+  z-index: 10;
+  right: 0;
+  top: 2px;
+  cursor: pointer;
+  &:hover {
+    opacity: 0.6;
+  }
+
+  @media (max-width: 768px) {
+    right: 2px;
+    top: -1px;
+    path {
+      display: none;
+    }
+  }
+}
+
+.menu-burger__icon {
+  width: 20px;
+  height: 2px;
+  background-color: black;
+  position: absolute;
+  left: 17px;
+  top: 27px;
+  &:hover {
+    opacity: 0.6;
+  }
+
+  &::after,
+  &::before {
+    content: "";
+    width: 20px;
+    height: 2px;
+    background-color: black;
+    position: absolute;
+  }
+
+  &::after {
+    top: 6px;
+  }
+
+  &::before {
+    top: -6px;
+  }
+}
+
+.company-name {
+  z-index: 6;
+  position: absolute;
+  left: 52.5%;
+  transform: translateX(-50%);
+  top: 227px;
+
+  @media (max-width: 1440px) {
+    left: 52%;
+  }
+
+  @media (max-width: 320px) {
+    left: 0;
+    transform: none;
+    top: 50%;
+  }
+
+  &__title {
+    font-family: "Philosopher", sans-serif;
+    font-weight: 400;
+    text-transform: uppercase;
+    font-size: 140px;
+    letter-spacing: 0.36em;
+    line-height: 152px;
+    color: #fff;
+    margin: 0;
+
+    @media (max-width: 1200px) {
+      font-size: 100px;
+    }
+
+    @media (max-width: 900px) {
+      font-size: 80px;
+    }
+
+    @media (max-width: 630px) {
+      font-size: 70px;
+    }
+
+    @media (max-width: 540px) {
+      font-size: 50px;
+    }
+
+    @media (max-width: 380px) {
+      font-size: 35px;
+    }
+
+    @media (max-width: 320px) {
+      display: none;
+    }
+  }
+}
+
+.company-numbers__block-yellow {
+  width: 138px;
+  height: 383px;
+  background-color: #f7e611;
+  box-shadow: 0 0 88px rgba(0, 0, 0, 0.1);
+  position: absolute;
+  top: 159px;
+  right: 15.4%;
+  z-index: 5;
+
+  @media (max-width: 900px) {
+    height: 340px;
+    right: 9%;
+  }
+
+  @media (max-width: 768px) {
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    background-color: transparent;
+  }
+}
+
+.company-numbers__block-trapeze {
+  position: absolute;
+  z-index: 4;
+  left: 269px;
+  top: 169px;
+
+  @media (max-width: 1300px) {
+    left: 200px;
+
+    svg {
+      width: 150px;
+    }
+  }
+
+  @media (max-width: 900px) {
+    svg {
+      width: 120px;
+    }
+  }
+
+  @media (max-width: 630px) {
+    left: 120px;
+  }
+
+  @media (max-width: 320px) {
+    transform: rotate(90deg);
+    top: 0px;
+    right: -172px;
+    z-index: 2;
+
+    svg {
+      width: auto;
+    }
+  }
+}
+
+.button-arrow {
+  width: 20px;
+  height: 36px;
+  background-image: url("../img/icons/arrow.png");
+  background-color: transparent;
+  border: none;
+  position: absolute;
+  cursor: pointer;
+
+  &:hover {
+    opacity: 0.8;
+  }
+
+  &--left {
+    left: -38.6px;
+    bottom: 120px;
+  }
+
+  &--right {
+    right: -38.6px;
+    bottom: 120px;
+    transform: scaleX(-1);
+  }
+
+  @media (max-width: 900px) {
+    &--left,
+    &--right {
+      bottom: 80px;
+    }
+  }
+
+  @media (max-width: 768px) {
+    &--left {
+      left: 20px;
+      bottom: 138px;
+    }
+
+    &--right {
+      right: 20px;
+      bottom: 138px;
+    }
+  }
+}
+
+.company-letter-G {
+  font-family: "Geometria", sans-serif;
+  font-size: 80px;
+  font-weight: 500;
+  color: transparent;
+  -webkit-text-stroke: 1px black;
+  text-stroke: 1px black;
+  position: absolute;
+  right: 18.2%;
+  top: 104px;
+  z-index: 4;
+
+  @media (max-width: 320px) {
+    font-size: 60px;
+    top: 36.5%;
+    right: 39%;
+    z-index: 3;
+  }
+}
+
+.company-numbers {
+  &__item {
+    font-family: "Geometria", sans-serif;
+    font-weight: 300;
+    position: absolute;
+    z-index: 3;
+
+    &--1 {
+      top: 83px;
+      left: 11.2%;
+    }
+
+    &--3 {
+      top: 163px;
+      left: 11.2%;
+    }
+
+    &--51 {
+      font-weight: 900;
+      font-size: 28px;
+      transform: rotate(-90deg);
+      top: 33px;
+      left: 37.6%;
+      opacity: 0.5;
+    }
+
+    @media (max-width: 768px) {
+      &--1,
+      &--3,
+      &--51 {
+        display: none;
+      }
+    }
+  }
+}
+
+.company-numbers__item--13-7 {
+  font-size: 45px;
+  font-weight: 700;
+  font-style: italic;
+  line-height: 57px;
+  letter-spacing: 0.1em;
+  position: absolute;
+  bottom: 32px;
+  left: 21px;
+
+  sub {
+    font-size: 17px;
+    line-height: 56px;
+    position: absolute;
+    top: 32px;
+
+    &::before {
+      content: "";
+      display: block;
+      position: absolute;
+      width: 17px;
+      height: 3px;
+      background-color: black;
+      top: 12px;
+    }
+  }
+
+  @media (max-width: 768px) {
+    left: auto;
+    bottom: 54px;
+    right: 25px;
+  }
+
+  @media (max-width: 320px) {
+    display: block;
+    width: 148px;
+    height: 148px;
+    background-color: #f7e611;
+    right: 0;
+    transform: translate(50%, 87%) rotate(45deg);
+    font-size: 20px;
+
+    span {
+      display: block;
+      position: absolute;
+      top: 41.6px;
+      left: 18px;
+      transform: rotate(-45deg);
+    }
+    sub {
+      display: none;
+    }
+  }
+}
+
+.company-numbers__block {
+  width: 100px;
+  height: 100px;
+  border: 1px solid black;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  top: 119px;
+  left: 39.7%;
+  position: absolute;
+  z-index: 5;
+
+  .company-numbers__item--Ural-03 {
+    font-weight: 400;
+    font-size: 17px;
+    color: white;
+    letter-spacing: 0.126em;
+    line-height: 21px;
+    text-transform: uppercase;
+  }
+
+  @media (max-width: 900px) {
+    display: none;
+  }
+}
+
+.company-slogan {
+  position: absolute;
+  bottom: -21px;
+  left: 56px;
+  transform: rotate(-90deg);
+  opacity: 0.5;
+
+  &__text {
+    font-family: "Philosopher", sans-serif;
+    font-style: italic;
+    font-size: 9px;
+    line-height: 10px;
+  }
+
+  @media (max-width: 1200px) {
+    bottom: -8px;
+    left: 23.5px;
+  }
+
+  @media (max-width: 900px) {
+    left: 9.5px;
+    &__text {
+      font-size: 10px;
+    }
+  }
+
+  @media (max-width: 320px) {
+    width: 115px;
+    left: 12px;
+    top: -104px;
+
+    &__text {
+      font-size: 9px;
+    }
+  }
+}
+
+.company-logo {
+  position: absolute;
+  left: 50%;
+  bottom: -54px;
+  transform: translateX(-50%);
+  z-index: 6;
+
+  &::after {
+    content: "";
+    display: block;
+    width: 100%;
+    height: 10px;
+    background-color: #f7e611;
+    position: absolute;
+    bottom: -4px;
+    z-index: 7;
+  }
+
+  @media (max-width: 900px) {
+    bottom: 30px;
+    svg {
+      width: 150px;
+    }
+
+    &::after {
+      bottom: 15px;
+    }
+  }
+
+  @media (max-width: 768px) {
+    bottom: 0;
+    overflow: hidden;
+    height: 83px;
+    svg {
+      width: 136px;
+    }
+    &::after {
+      display: none;
+    }
+  }
+}
+
+.company-letters-wrapper {
+  display: flex;
+  position: relative;
+
+  padding-top: 35px;
+
+  @media (max-width: 768px) {
+    display: block;
+    padding: 0;
+  }
+}
+
+.company-name-letters {
+  flex-basis: 50%;
+  position: relative;
+  font-family: "Philosopher", sans-serif;
+  font-weight: 700;
+  font-size: 25px;
+  line-height: 28px;
+
+  &__logo {
+    position: absolute;
+
+    &--first {
+      left: 112.4px;
+      top: 36px;
+    }
+
+    &--white {
+      position: absolute;
+      top: 124px;
+      left: 371.4px;
+      path {
+        fill: transparent;
+        stroke: black;
+      }
+    }
+  }
+
+  &__item {
+    position: absolute;
+    &--letter-A {
+      top: 85px;
+      left: 187px;
+      z-index: 5;
+    }
+
+    &--letter-F {
+      top: 50px;
+      left: 252px;
+    }
+
+    &--letter-FF {
+      top: 94px;
+      left: 316px;
+    }
+
+    &--letter-I {
+      top: 66px;
+      left: 375px;
+    }
+
+    &--letter-N {
+      top: 106px;
+      left: 441px;
+    }
+  }
+
+  @media (max-width: 1200px) {
+    font-size: 20px;
+    .company-name-letters__item,
+    .company-name-letters__logo {
+      transform: translateX(calc(100% - 100px));
+    }
+  }
+
+  @media (max-width: 900px) {
+    display: flex;
+    justify-content: space-between;
+    .company-name-letters__item,
+    .company-name-letters__logo {
+      transform: none;
+      position: static;
+    }
+  }
+
+  @media (max-width: 768px) {
+    .company-name-letters__item,
+    .company-name-letters__logo {
+      position: absolute;
+      top: 0;
+      left: 0;
+    }
+
+    .company-name-letters__logo--first,
+    .company-name-letters__item {
+      display: none;
+    }
+
+    .company-name-letters__logo--white {
+      top: -53px;
+      bottom: 30px;
+      left: 45.4px;
+      z-index: 5;
+    }
+  }
+}
+
+.company-name-letters-second {
+  flex-basis: 50%;
+  position: relative;
+  font-family: "Philosopher", sans-serif;
+  font-weight: 700;
+  font-size: 25px;
+  line-height: 28px;
+  &__logo--third {
+    position: absolute;
+    top: 96px;
+    right: 371.8px;
+
+    path {
+      fill: transparent;
+      stroke: black;
+    }
+  }
+
+  &__logo--forth {
+    position: absolute;
+    top: 77px;
+    right: 136.8px;
+  }
+
+  &__item {
+    position: absolute;
+    &--letter-second-A {
+      top: 64px;
+      right: 413px;
+    }
+
+    &--letter-second-G {
+      top: 71px;
+      right: 311px;
+
+      &::before {
+        content: "";
+        display: block;
+        position: absolute;
+        width: 18px;
+        height: 18px;
+        background-image: url("../img/icons/g-icon.svg");
+        background-position: center;
+        background-repeat: no-repeat;
+        top: 4px;
+        left: -3px;
+      }
+    }
+
+    &--letter-second-E {
+      top: 98px;
+      right: 202px;
+    }
+  }
+
+  @media (max-width: 1200px) {
+    font-size: 20px;
+    .company-name-letters-second__item,
+    .company-name-letters-second__logo {
+      transform: translateX(calc(100% + 100px));
+    }
+  }
+
+  @media (max-width: 900px) {
+    display: flex;
+    justify-content: space-between;
+    // margin-top: 20px;
+    .company-name-letters-second__item,
+    .company-name-letters-second__logo {
+      transform: none;
+      position: static;
+    }
+
+    .company-name-letters-second__item--letter-second-G::before {
+      display: none;
+    }
+  }
+
+  @media (max-width: 768px) {
+    .company-name-letters-second__item,
+    .company-name-letters-second__logo {
+      position: absolute;
+      top: 0;
+      left: 0;
+    }
+
+    .company-name-letters-second__logo--third,
+    .company-name-letters-second__item {
+      display: none;
+    }
+
+    .company-name-letters-second__logo--forth {
+      left: auto;
+      top: -40px;
+      right: 27.8px;
+      z-index: 5;
+    }
+  }
+
+  @media (max-width: 320px) {
+    .company-name-letters-second__logo--forth {
+      top: -341px;
+    }
+  }
+}

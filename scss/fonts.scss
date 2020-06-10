@@ -1,0 +1,67 @@
+@font-face {
+  font-family: "Philosopher";
+  src: local("Philosopher-Regular"),
+    url("../fonts/Philosopher/Philosopher-Regular.ttf");
+  font-weight: 400;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Philosopher";
+  src: local("Philosopher-Bold"),
+    url("../fonts/Philosopher/Philosopher-Bold.ttf");
+  font-weight: 700;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Philosopher";
+  src: local("Philosopher-Italic"),
+    url("../fonts/Philosopher/Philosopher-Italic.ttf");
+  font-weight: 400;
+  font-style: italic;
+}
+
+@font-face {
+  font-family: "Geometria";
+  src: local("Geometria"), url("../fonts/Geometria/Geometria.otf");
+  font-weight: 400;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Geometria";
+  src: local("Geometria-Light"), url("../fonts/Geometria/Geometria-Light.otf");
+  font-weight: 300;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Geometria";
+  src: local("Geometria-LightItalic"),
+    url("../fonts/Geometria/Geometria-LightItalic.otf");
+  font-weight: 300;
+  font-style: italic;
+}
+
+@font-face {
+  font-family: "Geometria";
+  src: local("Geometria-Medium"), url("../fonts/Geometria/Geometria-Medium.otf");
+  font-weight: 500;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Geometria";
+  src: local("Geometria-Heavy"), url("../fonts/Geometria/Geometria-Heavy.otf");
+  font-weight: 900;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Geometria";
+  src: local("Geometria-HeavyItalic"),
+    url("../fonts/Geometria/Geometria-HeavyItalic.otf");
+  font-weight: 900;
+  font-style: italic;
+}
